@@ -42,4 +42,4 @@ names(aggdf)[1] <- c('activity')
 setwd('../')		#set working directory back to original directory
 write.table(df, file='df.txt', row.names = FALSE)
 write.table(aggdf, file='aggdf.txt', row.names = FALSE)
-
+aggdf
