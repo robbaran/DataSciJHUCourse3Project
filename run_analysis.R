@@ -28,15 +28,17 @@ y <- rbind(ytrain, ytest)
 subjects <- rbind(subject_train, subject_test)
 df <- cbind(subjects, x, y)
 ## Convert activity_code into descriptive activity found in activity_labels
-df <- merge(df, activity_labels, by='activity_code')[,2:length(df)]
+df <- merge(df, activity_labels, by='activity_code')
+df <- df[,2:length(df)]
 
 ## Create independent data.frame with average measurements grouped by subject and activity
 aggdf <- aggregate(df, by=list(df$subject_id, df$activity), FUN="mean")
 #drop original activity column (NAs after attempting to take their average)
+aggdf$activity <- aggdf$Group.2
 #and drop Group.1 column (equivalent to subject_id)
-aggdf <- aggdf[,c(2,4:(length(aggdf)-1))]
+aggdf <- aggdf[,3:length(aggdf)]
 #rename Group1 to subject_id, and Group2 to activity
-names(aggdf)[1] <- c('activity')
+#names(aggdf)[1] <- c('activity')
 
 ## Save the data.frame objects into .txt files
 setwd('../')		#set working directory back to original directory
