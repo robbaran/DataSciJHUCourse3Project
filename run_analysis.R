@@ -30,7 +30,7 @@ subjects <- rbind(subject_train, subject_test)
 df <- cbind(subjects, x, y)
 ## Convert activity_code into descriptive activity found in activity_labels
 df <- merge(df, activity_labels, by='activity_code')
-df <- df[,2:length(df)]
+df <- df[,2:length(df)]		#remove activity_code column
 
 ## Create independent data.frame with average measurements grouped by subject and activity
 aggdf <- aggregate(df, by=list(df$subject_id, df$activity), FUN="mean")
