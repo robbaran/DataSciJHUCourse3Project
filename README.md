@@ -9,8 +9,13 @@ NOTE: **run_analysis.R** requires the directory 'UCI HAR Dataset' to be in the w
   DateDownloaded <- Sys.Date()
   unzip('smartphone.zip')
   ```
+A **df.txt** and **aggdf.txt** which were produced by **run_analysis.R** are provided in this repo. To load them into data.frames in R without running **run_analysis.R**, run the following:
+  ```
+  aggdf <- read.table('aggdf.txt', header = TRUE, check.names = FALSE)
+  df <- read.table('df.txt', header = TRUE, check.names = FALSE)
+  ```
 ## df.txt and aggdf.txt
-* The data in **df.txt** and **aggdf.txt** produced by run_analysis.R are tidy because each row represents a separate observation of a subject's smartphone's test measurements, with each column representing a separate variable being measured in each observation. The two data tables report on the same features/columns, but **df.txt**'s rows represent indivual test observations of those features, whereas **aggdf.txt**'s rows represent the mean measurement for each feature aggregated by subject and activity type.
+* The data in **df.txt** and **aggdf.txt** produced by **run_analysis.R** are tidy because each row represents a separate observation of a subject's smartphone's test measurements, with each column representing a separate variable being measured in each observation. The two data tables report on the same features/columns, but **df.txt**'s rows represent indivual test observations of those features, whereas **aggdf.txt**'s rows represent the mean measurement for each feature aggregated by subject and activity type.
 ### Same Columns
 * df.txt and aggdf.txt both have 68 columns whose names are listed in '**modified_features.txt**' and whose derivations are explained in '**modified_features_info.txt**'.
   * The 1st column displays the subject_id, which is the identifier of a particular test subject for a measurement.
