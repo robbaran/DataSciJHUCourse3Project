@@ -1,5 +1,6 @@
 ## This script prepares data collected from Galaxy S smartphones.
-## It createses two data.frame objects: df and aggdf.
+## It createses two data.frame objects: df and aggdf
+## and writes them to the files df.txt and aggdf.txt, respectively.
 ## df contains all training and test data from the dataset, 
 ##   and its columns contain all mean() and std() measurments for x,
 ##   as well as outputs y (which are activity codes and descriptive labels),
@@ -44,4 +45,3 @@ aggdf <- aggdf[,3:length(aggdf)]
 setwd('../')		#set working directory back to original directory
 write.table(df, file='df.txt', row.names = FALSE)
 write.table(aggdf, file='aggdf.txt', row.names = FALSE)
-aggdf
