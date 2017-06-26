@@ -1,4 +1,3 @@
-activity
 subject_id
 tBodyAcc-mean()-X
 tBodyAcc-mean()-Y
@@ -66,3 +65,4 @@ fBodyBodyGyroMag-mean()
 fBodyBodyGyroMag-std()
 fBodyBodyGyroJerkMag-mean()
 fBodyBodyGyroJerkMag-std()
+activity
