@@ -28,13 +28,13 @@ fBodyAccJerkMag
 fBodyGyroMag
 fBodyGyroJerkMag
 
-The set of variables that were estimated from these signals are: 
+* The set of variables that were estimated from these signals are: 
 
-mean(): Mean value
-std(): Standard deviation
-*The following variables were removed to produce df.txt and aggdf.txt*
->*mad(): Median absolute deviation 
->max(): Largest value in array
+  * mean(): Mean value
+  * std(): Standard deviation
+  * *The following variables were removed to produce df.txt and aggdf.txt*
+* >*mad(): Median absolute deviation 
+* >max(): Largest value in array
 >min(): Smallest value in array
 >sma(): Signal magnitude area
 >energy(): Energy measure. Sum of the squares divided by the number of values. 
