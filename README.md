@@ -3,7 +3,7 @@
 The script **run_analysis.R** reshapes accelerometer data from Galaxy smartphones (found in the 'UCI HAR Dataset' subdirectory of the working directory) into two data.frame objects named '**df.txt**' and '**aggdf.txt**', described below. 
 
 NOTE: **run_analysis.R** requires the directory 'UCI HAR Dataset' to be in the working directory.
-  Run the following R code (on MAC OS) to download and unzip the necessary data, creating the directory 'UCI HAR Dataset', BEFORE running run_analysis.R:
+  Run the following R code (on MAC OS) to download and unzip the necessary data, creating the directory 'UCI HAR Dataset', BEFORE running **run_analysis.R**:
   ```
   download.file('https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip','smartphone.zip','curl')
   DateDownloaded <- Sys.Date()
