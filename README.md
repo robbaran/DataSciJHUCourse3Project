@@ -9,11 +9,12 @@ NOTE: run_analysis.R requires the directory 'UCI HAR Dataset' to be in the worki
   DateDownloaded <- Sys.Date()
   unzip('smartphone.zip')
   ```
-* df.txt is a data.frame with 10,299 observations of 69 variables.
-    * Each observation consists of a subject noted by 'subject_id', 66 various measurements from the subject's smartphone's accelerometer, and a label indicating the activity in which the subject was engaged during the measurements (denoted by 'activity' and 'activity_code'). 
-    * The 66 measurements in df are a subset of the total 561 measurements available from the data source, corresponding to only the mean values or standard deviations of measurements. These are noted with 'mean()' and std()', respectively, in the files features.txt and features_info.txt.
-  
-* aggdf.txt is a data.frame with 180 observations of 68 variables.
-    * The first two columns of aggdf denote an activity and subject_id and the last 66 columns correspond to smartphone measurements as mentiond above in the description of df.
-    * Each observation in aggdf denotes the mean measurement value of each measurement for a given activity and subject.
-    * There are (30 x 6) = 180 observations because the data contain measurements from 30 subjects engaging in 6 activities.
+### Same Columns
+* df.txt and aggdf.txt both have 68 columns whose names are listed in 'modified_features.txt'.
+  * The 1st column displays the subject_id, which is the identifier of a particular test subject for a measurement.
+  * The 2nd through 67th columns display 66 measurements, corresponding to only the mean() and std() values of the original 561 features in the total dataset.
+  * The last and 68th column displays the name of the activity in which the subject was engaged during a test.
+### Different Rows
+* df.txt and aggdf.txt represent different observations
+    * df.txt contains all 10,299 observations of the measurements and labels.
+    * aggdf.txt contains 180 rows, each of which contains the mean value of each of the 66 measurements for a given activity and subject. There are (30 x 6) = 180 observations because the data contain measurements from 30 subjects engaging in 6 activities.
