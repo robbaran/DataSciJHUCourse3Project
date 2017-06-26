@@ -34,12 +34,8 @@ df <- df[,2:length(df)]		#remove activity_code column
 
 ## Create independent data.frame with average measurements grouped by subject and activity
 aggdf <- aggregate(df, by=list(df$subject_id, df$activity), FUN="mean")
-#drop original activity column (NAs after attempting to take their average)
-aggdf$activity <- aggdf$Group.2
-#and drop Group.1 column (equivalent to subject_id)
-aggdf <- aggdf[,3:length(aggdf)]
-#rename Group1 to subject_id, and Group2 to activity
-#names(aggdf)[1] <- c('activity')
+aggdf$activity <- aggdf$Group.2		#reset activity from NA (resulting from mean) to labels in Group.2
+aggdf <- aggdf[,3:length(aggdf)]	#then drop Group.1 column (equivalent to subject_id) and now-redundant Group.2
 
 ## Save the data.frame objects into .txt files
 setwd('../')		#set working directory back to original directory
