@@ -22,7 +22,7 @@ ytest <- read.table('test/y_test.txt', col.names = c('activity_code'))
 subject_test <- read.table('test/subject_test.txt', col.names = c('subject_id'))
 activity_labels <- read.table('activity_labels.txt', col.names = c('activity_code','activity'))
 
-## Combine the data into a useful dataframe
+## Combine the data into a useful data.frame
 x <- rbind(xtrain, xtest)
 x <- x[,names(x)[grep("mean\\(\\)|std\\(\\)",names(x))]]  #keep only mean() or std() measurements
 y <- rbind(ytrain, ytest)
